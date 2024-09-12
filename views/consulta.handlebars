@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">SISTEMA WEB</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link text-white" href="/">Cadastrar</a>
+                            <a class="nav-link text-white" href="/consulta">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col">
+            <h5>Cadastrar - Agendamento de Potenciais Clientes</h5>
+            <p>Sistema utilizado para agendamento de serviços.</p>
+
+            <!-- Tabela de Dados sem bordas -->
+            <table class="table">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Origem</th>
+                        <th>Data de Contato</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each posts}}
+                        {{#dataValues}}
+                        <tr>
+                            <td>{{nome}}</td>
+                            <td>{{telefone}}</td>
+                            <td>{{origem}}</td>
+                            <td>{{dataContato}}</td>
+                            <td>
+                                <a href="/editar/{{id}}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="/excluir/{{id}}" class="btn btn-primary btn-sm">Excluir</a>
+                            </td>
+                        </tr>
+                        {{/dataValues}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
